@@ -1,0 +1,34 @@
+{
+  "name": "inquirer-select-line",
+  "version": "1.0.0",
+  "description": "Prompt for inserting into array for inquirer",
+  "main": "index.js",
+  "scripts": {
+    "lint": "esw index.js --color",
+    "lint:watch": "esw index.js --color --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adam-golab/inquirer-select-line.git"
+  },
+  "keywords": [
+    "inquirer"
+  ],
+  "author": "Adam Golab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adam-golab/inquirer-select-line/issues"
+  },
+  "homepage": "https://github.com/adam-golab/inquirer-select-line#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-brainhub": "^1.2.0",
+    "eslint-watch": "^3.1.0"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "cli-cursor": "^2.1.0",
+    "figures": "^2.0.0",
+    "inquirer": "^3.0.6"
+  }
+}
