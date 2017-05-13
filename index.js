@@ -41,6 +41,7 @@ function listRender(choices, pointer) {
 function Prompt(...args) {
   Base.apply(this, args);
   this.opt = args[0],
+  this.previousAnswers = args[2];
   this.selected = 0;
   this.paginator = new Paginator();
   this.firstRender = true;
@@ -67,10 +68,21 @@ function Prompt(...args) {
 util.inherits( Prompt, Base );
 
 /**
+ * get choices based on passed array or function
+ * @return {Array} choices to display
+ */
+Prompt.prototype.getChoices = function() {
+  if (typeof this.opt.choices === 'function') {
+    return this.opt.choices(this.selected, this.previousAnswers);
+  }
+  return this.opt.choices;
+};
+
+/**
  * handle pressed down key
  */
 Prompt.prototype.onDownKey = function() {
-  const len = this.opt.choices.length;
+  const len = this.getChoices().length;
   this.selected = (this.selected < len) ? this.selected + 1 : 0;
   this.render();
 };
@@ -79,7 +91,7 @@ Prompt.prototype.onDownKey = function() {
  * handle pressed up key
  */
 Prompt.prototype.onUpKey = function() {
-  const len = this.opt.choices.length;
+  const len = this.getChoices().length;
   this.selected = (this.selected > 0) ? this.selected - 1 : len;
   this.render();
 };
@@ -121,9 +133,9 @@ Prompt.prototype.render = function() {
   }
 
   const choices = [
-    ...this.opt.choices.slice(0, this.selected),
+    ...this.getChoices().slice(0, this.selected),
     this.getPlaceholder(this.selected),
-    ...this.opt.choices.slice(this.selected),
+    ...this.getChoices().slice(this.selected),
   ];
 
   const choicesStr = listRender(choices, this.selected);
