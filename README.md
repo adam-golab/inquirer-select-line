@@ -2,6 +2,8 @@
 
 select-line prompt for [inquirer](https://github.com/SBoudrias/Inquirer.js)
 
+![demo](https://media.giphy.com/media/xUA7b1MxpngddUvdHW/giphy.gif)
+
 ## Installation
 
 ```

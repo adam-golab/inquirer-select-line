@@ -25,11 +25,11 @@ const thirdQuestion = {
   choices: answers => index => {
     switch (index) {
       case 0:
-        return ['second line', 'third line'];
+        return ['second line when selected first', 'third line when selected first'];
       case 1:
-        return ['first line', 'third line'];
+        return ['first line when selected second', 'third line when selected second'];
       case 2:
-        return ['first line', 'second line'];
+        return ['first line when selected third', 'second line when selected third'];
       default:
         return ['first line', 'second line'];
     }
