@@ -12,7 +12,7 @@ npm install --save inquirer-select-line
 
 ## Usage
 
-###Register the prompt
+### Register the prompt
 
 ```javascript
 inquirer.registerPrompt('selectLine', require('inquirer-select-line'));
