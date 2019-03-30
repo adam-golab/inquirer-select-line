@@ -40,7 +40,11 @@ function listRender(choices, pointer) {
  */
 function Prompt(...args) {
   Base.apply(this, args);
-  this.opt = args[0],
+  this.opt = {
+    ...args[0],
+    suffix: '',
+    prefix: chalk.green('?')
+  },
   this.previousAnswers = args[2];
   this.selected = 0;
   this.paginator = new Paginator();
