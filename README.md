@@ -47,7 +47,7 @@ inquirer.prompt([{
   name: 'line',
   choices: ['first', 'second', 'third', 'fourth'],
 }]).then(function(answers) {
-    console.log('Chosen line: ' answers.line);
+    console.log('Chosen line: ' + answers.line);
     /*
     OUTPUT :
     Chosen line: 2
